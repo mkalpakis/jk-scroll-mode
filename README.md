@@ -3,5 +3,5 @@ scroll with jk in emacs, modify the .el file to your own desire to scroll with o
 
 to make it work
 add:
-(add-to-list 'load-path "path/to/jks-scroll-mode")
+(add-to-list 'load-path "path/to/jk-scroll-mode")
 (require 'jk-scroll-mode)
