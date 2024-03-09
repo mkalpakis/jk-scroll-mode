@@ -87,4 +87,4 @@
 
 (global-set-key (kbd "C-c n") #'jk-scroll-mode)
 
-(provide 'jk-scroll)
+(provide 'jk-scroll-mode)
