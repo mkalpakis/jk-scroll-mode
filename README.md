@@ -1,1 +1,7 @@
 # jk-scroll-mode
+scroll with jk in emacs, modify the .el file to your own desire to scroll with other keys
+
+to make it work
+add:
+(add-to-list 'load-path "path/to/jks-scroll-mode")
+(require 'jk-scroll-mode)
