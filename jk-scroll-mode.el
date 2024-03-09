@@ -19,7 +19,7 @@
 
 (define-minor-mode jk-scroll-mode
   "Toggles global jk-scroll-mode" ;; i want buffer local though
-  :init-value t ;; initial value, nil for disabled by default,
+  :init-value nil ;; initial value, nil for disabled by default,
   ;;t for enabled
   :global t ;; maybe changing this is what i want for buffer loc
   ;; :group 'jk-scroll ;; i have no idea what this is
@@ -84,4 +84,7 @@
 									(message "jk-scroll on!")))
 (add-hook 'jk-scroll-mode-off-hook (lambda () (interactive)
 									 (message "jk-scroll off!")))
+
 (global-set-key (kbd "C-c n") #'jk-scroll-mode)
+
+(provide 'jk-scroll)
