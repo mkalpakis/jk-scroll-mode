@@ -1,1 +1,1 @@
-# jk-sroll-mode
+# jk-scroll-mode
