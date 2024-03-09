@@ -34,6 +34,7 @@
   "C-;" #'right-word ;; why doesnt this one work?
   "C-j" #'jk-scroll-half-page-down
   "C-k" #'jk-scroll-half-page-up
+  ;; "SPC" #'right-char ;; this doesnt work
   ;; make the rest of the keys nil so i dont try to type while
   ;; in this mode
   "q" #'ignore ;; is this possible to do using regex instead?
