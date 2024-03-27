@@ -17,6 +17,18 @@
   (interactive)
   (jk-scroll-half t))
 
+(defun jk-change-cursor-color (jk-color)
+  (if jk-scroll-mode
+      (progn
+        (setq jk-old-cursor-color (cdr (assoc 'cursor-color (frame-parameters))))
+        (set-cursor-color jk-color))
+   (set-cursor-color old-cursor-color)))
+
+(defun jk-scroll-change-cursor-color ()
+  (interactive)
+  jk-change-cursor-color "brightblue")
+
+
 (define-minor-mode jk-scroll-mode
   "Toggles global jk-scroll-mode" ;; i want buffer local though
   :init-value nil ;; initial value, nil for disabled by default,
@@ -79,8 +91,9 @@
   "0" #'ignore
   "-" #'ignore
   "=" #'ignore
-  ) 
   )
+  )
+
 (add-hook 'jk-scroll-mode-on-hook (lambda() (interactive)
 									(message "jk-scroll on!")))
 (add-hook 'jk-scroll-mode-off-hook (lambda () (interactive)
