@@ -99,6 +99,6 @@
 (add-hook 'jk-scroll-mode-off-hook (lambda () (interactive)
 									 (message "jk-scroll off!")))
 
-(global-set-key (kbd "C-c n") #'jk-scroll-mode)
+(global-set-key (kbd "C-c j") #'jk-scroll-mode)
 
 (provide 'jk-scroll-mode)
