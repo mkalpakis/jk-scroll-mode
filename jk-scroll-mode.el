@@ -28,6 +28,12 @@
   (interactive)
   jk-change-cursor-color "brightblue")
 
+(defun jk-scroll-toggle-exec ()
+  (interactive)
+  (call-interactively 'jk-scroll-mode)
+  (call-interactively 'execute-extended-command)
+  (call-interactively 'jk-scroll-mode)
+)
 
 (define-minor-mode jk-scroll-mode
   "Toggles global jk-scroll-mode" ;; i want buffer local though
@@ -43,9 +49,11 @@
   ";" #'right-char
   "i" #'jk-scroll-mode ;; used to go back to typing
   "C-l" #'left-word
-  "C-;" #'right-word ;; why doesnt this one work?
+  ;;"C-;" #'right-word ;; why doesnt this one work?
+  "'" #'right-word
   "C-j" #'jk-scroll-half-page-down
   "C-k" #'jk-scroll-half-page-up
+  "u" #'jk-scroll-toggle-exec
   ;; "SPC" #'right-char ;; this doesnt work
   ;; make the rest of the keys nil so i dont try to type while
   ;; in this mode
@@ -55,7 +63,6 @@
   "r" #'ignore
   "t" #'ignore
   "y" #'ignore
-  "u" #'ignore
   "o" #'ignore
   "p" #'ignore
   "[" #'ignore
@@ -67,7 +74,6 @@
   "f" #'ignore
   "g" #'ignore
   "h" #'ignore
-  "'" #'ignore
   "z" #'ignore
   "x" #'ignore
   "c" #'ignore
